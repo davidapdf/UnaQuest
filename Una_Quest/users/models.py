@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 
 class Unidade(models.Model):
     cidade = models.TextField()
-    descricao = models.TextField()
+    descricao = models.CharField(max_length = 5000)
     estado = models.TextField()
 
 class Disciplina(models.Model):
