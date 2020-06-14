@@ -8,7 +8,7 @@ class Resposta(models.Model):
 
 class Questao(models.Model):
     resposta = models.ForeignKey(Resposta, on_delete=models.CASCADE)
-    user = models.OneToOneField(Professor, on_delete=models.CASCADE)
+    user = models.ForeignKey(Professor, on_delete=models.CASCADE)
     descricao = models.TextField()
     data = models.DateTimeField(default=datetime.now, blank=True)
     aprovado = models.BooleanField(default=False)
