@@ -3,13 +3,14 @@ from django.contrib.auth.models import User
 
 
 class Unidade(models.Model):
-    cidade = models.TextField()
-    descricao = models.CharField(max_length = 5000)
-    estado = models.TextField()
+    cidade = models.CharField(max_length = 200)
+    estado = models.CharField(max_length = 2)
+    descricao = models.TextField()
+    
 
 class Disciplina(models.Model):
-    nome = models.TextField()
-    descricao = models.CharField(max_length=500,blank=True,null=True)
+    nome = models.CharField(max_length=500,blank=False,null=False)
+    descricao = models.TextField()
 
 class Professor(models.Model):
     user = models.OneToOneField(User,on_delete=models.CASCADE)
