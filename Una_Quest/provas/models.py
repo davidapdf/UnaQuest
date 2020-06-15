@@ -18,3 +18,6 @@ class ProvaAdmin(admin.ModelAdmin):
     formfield_overrides = {
         models.ManyToManyField: {'widget': CheckboxSelectMultiple},
     }
+    list_display = ('id','nome_prova','Professor')
+    def Professor(self,Prova):
+        return Prova.usuario.user
